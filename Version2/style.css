@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#content {
+    position: absolute;
+    white-space: nowrap;
+}
+
+#button {
+    position: relative;
+    white-space: nowrap;
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: none;
+    box-shadow: 10px 5px 5px black;
+}
+
+.sensor {
+    background-color: black;
+}
+
+#sensor1 {
+    position: absolute;
+    height: 90px;
+    width: 133.5px;
+    margin-top: -90px;
+    margin-left: 2px;
+}
+
+#sensor2 {
+    position: relative;
+    margin-left: -38px;
+    margin-top: -90px;
+    height: 90px;
+    width: 40px;
+}
+
+#sensor3 {
+    position: absolute;
+    height: 90px;
+    width: 133.5px;
+    margin-top: 40px;
+    margin-left: 2px;
+}
+
+#sensor4 {
+    position: absolute;
+    margin-left: 135px;
+    margin-top: -90px;
+    height: 90px;
+    width: 40px;
+}
+
+#sensor5 {
+    position: absolute;
+    margin-left: 135px;
+    margin-top: 40px;
+    height: 90px;
+    width: 40px;
+}
+
+#sensor6 {
+    position: absolute;
+    margin-left: -38px;
+    margin-top: 40px;
+    height: 90px;
+    width: 40px;
+}
+
+#sensor7 {
+    position: absolute;
+    margin-left: 130px;
+    margin-top: 0px;
+    height: 40px;
+    width: 45px;
+}
+
+#sensor8 {
+    position: absolute;
+    margin-left: -38px;
+    margin-top: 0px;
+    height: 40px;
+    width: 45px;
+}
