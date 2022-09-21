@@ -1,105 +1,93 @@
-const button = document.getElementById('content')
-
-const sensor1 = document.getElementById('sensor1');
-const sensor2 = document.getElementById('sensor2');
-const sensor3 = document.getElementById('sensor3');
-const sensor4 = document.getElementById('sensor4');
-const sensor5 = document.getElementById('sensor5');
-const sensor6 = document.getElementById('sensor6');
-const sensor7 = document.getElementById('sensor7');
-const sensor8 = document.getElementById('sensor8');
-
-const sensor = document.getElementsByClassName("sensor");
-
+let button = document.getElementById('button');
 const OFFSET = 100
 
-document.addEventListener('mousemove', (e) => {
-    if (Math.abs(horizontalDistanceFrom) <= horizontalOffset && Math.abs(verticalDistanceFrom) <= verticalOffset) {
-      setButtonPosition( buttonBox.x + horizontalOffset / horizontalDistanceFrom * 10, 
-      buttonBox.y + verticalOffset / verticalDistanceFrom * 10)
-    }
+left = button.style.left;
+top = button.style.top;
+
+button.addEventListener('mousemove', function() {
+        button.style.left = "250px"
+        button.style.top = "70px"
 })
 
-function setButtonPosition(left, top) {
-    const windowBox = document.body.getBoundingClientRect()
-    const buttonBox = content.getBoundingClientRect()
+document.addEventListener('mousemove', (e) => {
+    const x = e.pageX
+    const y = e.pageY
+    const buttonBox = button.getBoundingClientRect()
+    const horizontalDistanceFrom = distanceFromCenter(buttonBox.x, x, buttonBox.width)
+    const verticalDistanceFrom = distanceFromCenter(buttonBox.y, y, buttonBox.height)
 
-    if(distanceFromCenter(left, windowBox.left, buttonBox.width) < 0) {
-        left = window.innerWidth / 2
-        top = window.innerHeight / 2
-    }  
-
-    if(distanceFromCenter(left, windowBox.right, buttonBox.width) > 0) {
-        left = window.innerWidth / 2
-        top = window.innerHeight / 2
+    button_from_right = (horizontalDistanceFrom >= -145 && horizontalDistanceFrom <= -45) && (verticalDistanceFrom <= 20 && verticalDistanceFrom >= -25);
+    if(button_from_right) {
+        console.log("Rechts")
+        set_button_position(buttonBox.x - (100 * 6))
     }
 
-    if(distanceFromCenter(top, windowBox.top, buttonBox.height) < 0) {
-        left = window.innerWidth / 2
-        top = window.innerHeight / 2
+    button_from_left = (horizontalDistanceFrom <= 145 && horizontalDistanceFrom >= 45) && (verticalDistanceFrom <= 20 && verticalDistanceFrom >= -25);
+    if(button_from_left) {
+        console.log("Links")
+        set_button_position(buttonBox.x - (100 * 5))
     }
 
-    if(distanceFromCenter(top, windowBox.bottom, buttonBox.height) > 0) {
-        left = window.innerWidth / 2
-        top = window.innerHeight / 2
+    button_from_top = (horizontalDistanceFrom >= -70 && horizontalDistanceFrom <= 67) && (verticalDistanceFrom <= 72 && verticalDistanceFrom >= 18);
+    if(button_from_top) {
+        console.log("Oben")
+        set_button_position(0 , buttonBox.y - (100 * 3))
     }
 
+    button_from_bottom = (horizontalDistanceFrom >= -70 && horizontalDistanceFrom <= 67) && (verticalDistanceFrom >= -72 && verticalDistanceFrom <= -22);
+    if(button_from_bottom) {
+        set_button_position(0 , buttonBox.y - (100 * 4))
+    }
+
+    button_from_top_right = (horizontalDistanceFrom <= -70 && horizontalDistanceFrom >= -145) && (verticalDistanceFrom <= 70 && verticalDistanceFrom >= 20);
+    if(button_from_top_right) {
+        set_button_position(buttonBox.x - (100 * 6) , buttonBox.y - (100 * 3))
+    }
+
+    button_from_bottom_right = (horizontalDistanceFrom <= -70 && horizontalDistanceFrom >= -145) && (verticalDistanceFrom >= -70 && verticalDistanceFrom <= -25);
+    if(button_from_bottom_right) {
+        set_button_position(buttonBox.x - (100 * 6) , buttonBox.y - (100 * 4))
+    }
+
+    button_from_bottom_left = (horizontalDistanceFrom >= 66 && horizontalDistanceFrom <= 144) && (verticalDistanceFrom >= -70 && verticalDistanceFrom <= -25);
+    if(button_from_bottom_left) {
+        set_button_position(buttonBox.x - (100 * 5) , buttonBox.y - (100 * 4))
+    }
+
+    button_from_top_left = (horizontalDistanceFrom >= 66 && horizontalDistanceFrom <= 144) && (verticalDistanceFrom <= 70 && verticalDistanceFrom >= 20);
+    if(button_from_top_left) {
+        set_button_position(buttonBox.x - (100 * 5) , buttonBox.y - (100 * 3))
+    }
+    
+    let xborder = button.getBoundingClientRect().x
+    let yborder = button.getBoundingClientRect().y
+
+    console.log(xborder)
+
+    if (xborder <= 0 || xborder >= 1660) {
+        button.style.left = "250px"
+        button.style.top = "70px"
+    }
+
+    console.log(yborder)
+
+    if (yborder <= 7 || yborder >= 900) {
+        button.style.left = "250px"
+        button.style.top = "70px"
+    }
+
+})
+
+function set_button_position(left, top) {
+    
+    
     button.style.left = `${left}px`
     button.style.top = `${top}px`
 
-    // sensor1.style.left = `${left}px`
-    // sensor1.style.top = `${top}px`
-
-    // sensor2.style.left = `${left}px`
-    // sensor2.style.top = `${top}px`
-
-    // sensor3.style.left = `${left}px`
-    // sensor3.style.top = `${top}px`
-
-    // sensor4.style.left = `${left}px`
-    // sensor4.style.top = `${top}px`
-
-    // sensor5.style.left = `${left}px`
-    // sensor5.style.top = `${top}px`
-
-    // sensor6.style.left = `${left}px`
-    // sensor6.style.top = `${top}px`
-
-    // sensor7.style.left = `${left}px`
-    // sensor7.style.top = `${top}px`
-
-    // sensor8.style.left = `${left}px`
-    // sensor8.style.top = `${top}px`
-
+    left = left;
+    top = top;
 }
 
 function distanceFromCenter(boxPosition, mousePosition, boxSize) {
     return boxPosition - mousePosition + boxSize / 2
-}
-
-function trigger_sensor(sensor) {
-    if(sensor) {
-        sensor = false;
-        return sensor;
-    }else {
-        sensor = true;
-        return sensor;
-    }
-    return sensor;
-}
-
-function register_move(sensornumber) {
-    if(sensornumber == 1) {
-        trigger_sensor(sensor1);
-        if(trigger_sensor() == false) {
-            
-        }
-    }
-    if(sensornumber == 2) {}
-    if(sensornumber == 3) {}
-    if(sensornumber == 4) {}
-    if(sensornumber == 5) {}
-    if(sensornumber == 6) {}
-    if(sensornumber == 7) {}
-    if(sensornumber == 8) {}
 }
