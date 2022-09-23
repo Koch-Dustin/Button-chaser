@@ -12,8 +12,23 @@ document.addEventListener('mousemove', (e) => {
   const buttonBox = button.getBoundingClientRect()
   const horizontalDistanceFrom = distanceFromCenter(buttonBox.x, x, buttonBox.width)
   const verticalDistanceFrom = distanceFromCenter(buttonBox.y, y, buttonBox.height)
-  
-  
+  const horizontalOffset = buttonBox.width / 2 + OFFSET
+  const verticalOffset = buttonBox.height / 2 + OFFSET
+
+  testy = verticalDistanceFrom
+  testx = horizontalDistanceFrom
+
+  if((verticalDistanceFrom >= -80 && verticalDistanceFrom <= 80) && (horizontalDistanceFrom <= 160 && horizontalDistanceFrom >= -160)) {
+    
+    
+    
+    console.log("X: " + testx)
+    console.log("Y: " + testy)
+  }
+
+  if (Math.abs(horizontalDistanceFrom) <= horizontalOffset && Math.abs(verticalDistanceFrom) <= verticalOffset) {
+    setButtonPosition( buttonBox.x + horizontalOffset / horizontalDistanceFrom * 10, buttonBox.y + verticalOffset / verticalDistanceFrom * 10)
+  }
 
 })
 
