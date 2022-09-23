@@ -13,12 +13,24 @@ document.addEventListener('mousemove', (e) => {
   const horizontalDistanceFrom = distanceFromCenter(buttonBox.x, x, buttonBox.width)
   const verticalDistanceFrom = distanceFromCenter(buttonBox.y, y, buttonBox.height)
 
-  testy = verticalDistanceFrom
-  testx = horizontalDistanceFrom
+  testx = verticalDistanceFrom
+  testy = horizontalDistanceFrom
 
   if((verticalDistanceFrom >= -80 && verticalDistanceFrom <= 80) && (horizontalDistanceFrom <= 160 && horizontalDistanceFrom >= -160)) {
-    console.log("X: " + testx)
-    console.log("Y: " + testy)
+    
+    pushy = buttonBox.y + verticalDistanceFrom - 320.5
+    if(pushy >= 80) {
+      pushy = pushy - 80 * 2
+    }
+
+    pushx = buttonBox.x + horizontalDistanceFrom - 0
+    if(pushx >= 160) {
+      pushx = pushx - 0 * 2
+    }
+
+    console.log("X: " + pushx)
+    console.log("Y: " + pushy)
+
   }
 
 })
