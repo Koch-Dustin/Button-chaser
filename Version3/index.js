@@ -1,6 +1,5 @@
 const button = document.getElementById('button')
 const div = document.getElementById('container')
-const OFFSET = 100
 
 button.addEventListener('click', () => {
   alert('You won')
@@ -8,7 +7,7 @@ button.addEventListener('click', () => {
 })
 
 div.addEventListener('mousemove', (e) => {
-  // console.log("test");
+  
   const x = e.pageX
   const y = e.pageY
   const buttonBox = button.getBoundingClientRect()
@@ -36,93 +35,24 @@ div.addEventListener('mousemove', (e) => {
   }
 
   if(divBox.x < -120) {
-    div.style.left = "400px"
-    div.style.top = "400px"
+    div.style.left = "40%"
+    div.style.top = "30%"
   }
 
   if(divBox.x > window.innerWidth - 250) {
-    div.style.left = "400px"
-    div.style.top = "400px"
+    div.style.left = "40%"
+    div.style.top = "30%"
   }
 
   if(divBox.y < -170) {
-    div.style.left = "400px"
-    div.style.top = "400px"
+    div.style.left = "40%"
+    div.style.top = "30%"
   }
 
   if(divBox.y > window.innerHeight - 234) {
     div.style.left = "400px"
     div.style.top = "400px"
   }
-
-  if((verticalDistanceFrom >= -80 && verticalDistanceFrom <= 80) && (horizontalDistanceFrom <= 160 && horizontalDistanceFrom >= -160)) {
-
-    // if (testx < 0 && horizontalDistanceFrom > (-160)) {
-    //   pushx = (-160) - testx;
-    //   pushx = buttonBox.left + pushx;
-    //   button.style.left = `${pushx}px`
-    // }
-
-    // if (testx > 0 && horizontalDistanceFrom < 160) {
-    //   pushx = 160 - testx;
-    //   pushx = buttonBox.left + pushx;
-    //   button.style.left = `${pushx}px`
-    // }
-
-    // if (testy < 0 && verticalDistanceFrom > (-80)) {
-    //   pushy = (-80) - testy;
-    //   pushy = buttonBox.top + pushy;
-    //   button.style.top = `${pushy}px`
-    // }
-
-    // if (testy > 0 && verticalDistanceFrom < 80) {
-    //   pushy = 80 - testy;
-    //   pushy = buttonBox.top + pushy;
-    //   button.style.top = `${pushy}px`
-    // }
-
-    // console.log(pushx);
-
-    // console.log(pushx);
-
-    
-    // buttonBox.style.left = `${pushx}px`
-     
-    // button.style.top = `${topPos}px`
-    
-    // _______________________________________________________________________________
-
-    // pushy = buttonBox.y + verticalDistanceFrom - 320.5
-    // if(pushy >= 80) {
-    //   pushy = pushy - 80 * 2
-    //   // pushy = pushy * (-1)
-    // }else {
-    //   // pushy = pushy * (-1)
-    // }
-
-    // pushx = buttonBox.x + horizontalDistanceFrom - 240
-    // console.log(pushx)
-    // if(pushx >= 160) {
-    //   pushx = pushx - 160 * 2
-    //   // pushx = pushx * (-1)
-    // }else {
-    //   // pushx = pushx * (-1)
-    // }
-
-    // leftPos = buttonBox.left + pushx;
-    // topPos = buttonBox.top + pushy;
-
-    // console.log("Left: " + leftPos);
-    // console.log("Top: " + topPos);
-
-    // button.style.left = `${leftPos}px`
-    // button.style.top = `${topPos}px`
-
-    // console.log("X: " + pushx)
-    // console.log("Y: " + pushy)
-
-  }
-
 })
 
 function setButtonPosition(left, top) {
