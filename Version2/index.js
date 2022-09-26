@@ -46,60 +46,8 @@ function setButtonPosition(left, top) {
 
     button.style.left = `${left}px`
     button.style.top = `${top}px`
-
-    // sensor1.style.left = `${left}px`
-    // sensor1.style.top = `${top}px`
-
-    // sensor2.style.left = `${left}px`
-    // sensor2.style.top = `${top}px`
-
-    // sensor3.style.left = `${left}px`
-    // sensor3.style.top = `${top}px`
-
-    // sensor4.style.left = `${left}px`
-    // sensor4.style.top = `${top}px`
-
-    // sensor5.style.left = `${left}px`
-    // sensor5.style.top = `${top}px`
-
-    // sensor6.style.left = `${left}px`
-    // sensor6.style.top = `${top}px`
-
-    // sensor7.style.left = `${left}px`
-    // sensor7.style.top = `${top}px`
-
-    // sensor8.style.left = `${left}px`
-    // sensor8.style.top = `${top}px`
-
 }
 
 function distanceFromCenter(boxPosition, mousePosition, boxSize) {
     return boxPosition - mousePosition + boxSize / 2
-}
-
-function trigger_sensor(sensor) {
-    if(sensor) {
-        sensor = false;
-        return sensor;
-    }else {
-        sensor = true;
-        return sensor;
-    }
-    return sensor;
-}
-
-function register_move(sensornumber) {
-    if(sensornumber == 1) {
-        trigger_sensor(sensor1);
-        if(trigger_sensor() == false) {
-            
-        }
-    }
-    if(sensornumber == 2) {}
-    if(sensornumber == 3) {}
-    if(sensornumber == 4) {}
-    if(sensornumber == 5) {}
-    if(sensornumber == 6) {}
-    if(sensornumber == 7) {}
-    if(sensornumber == 8) {}
 }
