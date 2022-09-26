@@ -79,8 +79,6 @@ document.addEventListener('mousemove', (e) => {
 })
 
 function set_button_position(left, top) {
-    
-    
     button.style.left = `${left}px`
     button.style.top = `${top}px`
 
