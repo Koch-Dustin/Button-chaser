@@ -7,27 +7,24 @@ button.addEventListener('click', () => {
 })
 
 div.addEventListener('mousemove', (e) => {
-  
   const x = e.pageX
   const y = e.pageY
-  const buttonBox = button.getBoundingClientRect()
   const divBox = div.getBoundingClientRect()
   const horizontalDistanceFrom = distanceFromCenter(divBox.x, x, divBox.width)
   const verticalDistanceFrom = distanceFromCenter(divBox.y, y, divBox.height)
+  Distancey = verticalDistanceFrom
+  Distancex = horizontalDistanceFrom
 
-  testy = verticalDistanceFrom
-  testx = horizontalDistanceFrom
-
-  if (testx != 0) {
-    if (testx > 0)
+  if (Distancex != 0) {
+    if (Distancex > 0)
       pushx = divBox.x + 10;
     else
       pushx = divBox.x - 10;
     div.style.left = `${pushx}px`;
   }
 
-  if (testy != 0) {
-    if (testy > 0)
+  if (Distancey != 0) {
+    if (Distancey > 0)
       pushy = divBox.y + 10;
     else 
       pushy = divBox.y - 10;
@@ -54,34 +51,6 @@ div.addEventListener('mousemove', (e) => {
     div.style.top = "400px"
   }
 })
-
-function setButtonPosition(left, top) {
-  const windowBox = document.body.getBoundingClientRect()
-  const buttonBox = button.getBoundingClientRect()
-
-  if(distanceFromCenter(left, windowBox.left, buttonBox.width) < 0) {
-    left = window.innerWidth / 2
-    top = window.innerHeight / 2
-  }
-
-  if(distanceFromCenter(left, windowBox.right, buttonBox.width) > 0) {
-    left = window.innerWidth / 2
-    top = window.innerHeight / 2
-  }
-
-  if(distanceFromCenter(top, windowBox.top, buttonBox.height) < 0) {
-    left = window.innerWidth / 2
-    top = window.innerHeight / 2
-  }
-  
-  if(distanceFromCenter(top, windowBox.bottom, buttonBox.height) > 0) {
-    left = window.innerWidth / 2
-    top = window.innerHeight / 2
-  }
-
-  button.style.left = `${left}px`
-  button.style.top = `${top}px`
-}
 
 function distanceFromCenter(boxPosition, mousePosition, boxSize) {
   return boxPosition - mousePosition + boxSize / 2

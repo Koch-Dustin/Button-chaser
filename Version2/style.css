@@ -9,11 +9,6 @@ body {
     overflow: hidden;
 }
 
-#content {
-    position: absolute;
-    white-space: nowrap;
-}
-
 #button {
     position: relative;
     white-space: nowrap;
