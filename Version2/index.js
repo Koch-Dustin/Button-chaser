@@ -62,8 +62,6 @@ document.addEventListener('mousemove', (e) => {
     let xborder = button.getBoundingClientRect().x
     let yborder = button.getBoundingClientRect().y
 
-    console.log(xborder)
-
     if (xborder <= 0 || xborder >= 1660) {
         button.style.left = "250px"
         button.style.top = "70px"
