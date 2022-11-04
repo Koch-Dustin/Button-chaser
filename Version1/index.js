@@ -25,22 +25,26 @@ function setButtonPosition(left, top) {
   const windowBox = document.body.getBoundingClientRect()
   const buttonBox = button.getBoundingClientRect()
 
-  if(distanceFromCenter(left, windowBox.left, buttonBox.width) < 0) {
+  buttonHitsLeftEdge = distanceFromCenter(left, windowBox.left, buttonBox.width) < 0
+  if(buttonHitsLeftEdge) {
     left = window.innerWidth / 2
     top = window.innerHeight / 2
   }
 
-  if(distanceFromCenter(left, windowBox.right, buttonBox.width) > 0) {
+  buttonHitsRightEdge = distanceFromCenter(left, windowBox.right, buttonBox.width) > 0
+  if(buttonHitsRightEdge) {
     left = window.innerWidth / 2
     top = window.innerHeight / 2
   }
 
-  if(distanceFromCenter(top, windowBox.top, buttonBox.height) < 0) {
+  buttonHitsUpperEdge = distanceFromCenter(top, windowBox.top, buttonBox.height) < 0
+  if(ButtonHitsUpperEdge) {
     left = window.innerWidth / 2
     top = window.innerHeight / 2
   }
   
-  if(distanceFromCenter(top, windowBox.bottom, buttonBox.height) > 0) {
+  buttonHitsLowerEdge = distanceFromCenter(top, windowBox.bottom, buttonBox.height) > 0
+  if(buttonHitsLowerEdge) {
     left = window.innerWidth / 2
     top = window.innerHeight / 2
   }
