@@ -1,22 +1,22 @@
-*{
-    user-select: none;
+* {
+  user-select: none;
 }
 
 body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #button {
-    position: relative;
-    white-space: nowrap;
-    font-size: 2rem;
-    border: 1px solid black;
-    border-radius: 5px;
-    background: none;
-    box-shadow: 10px 5px 5px black;
-    margin-left: 60vh;
-    margin-top: 40vh;
+  position: relative;
+  white-space: nowrap;
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: none;
+  box-shadow: 10px 5px 5px black;
+  margin-left: 60vh;
+  margin-top: 40vh;
 }

@@ -12,41 +12,49 @@ div.addEventListener('mousemove', (e) => {
   const divBox = div.getBoundingClientRect()
   const horizontalDistanceFrom = distanceFromCenter(divBox.x, x, divBox.width)
   const verticalDistanceFrom = distanceFromCenter(divBox.y, y, divBox.height)
-  Distancey = verticalDistanceFrom
-  Distancex = horizontalDistanceFrom
+  const rightEdge = window.innerWidth - 250;
+  const leftEdge = -120;
+  const upperEdge= -170;
+  const lowerEdge = window.innerHeight - 234;
+  let pushX;
+  let pushY;
 
-  if (Distancex != 0) {
-    if (Distancex > 0)
-      pushx = divBox.x + 10;
+  if (horizontalDistanceFrom != 0) {
+    if (horizontalDistanceFrom > 0)
+      pushX = divBox.x + 10;
     else
-      pushx = divBox.x - 10;
-    div.style.left = `${pushx}px`;
+      pushX = divBox.x - 10;
+    div.style.left = `${pushX}px`;
   }
 
-  if (Distancey != 0) {
-    if (Distancey > 0)
-      pushy = divBox.y + 10;
+  if (verticalDistanceFrom != 0) {
+    if (verticalDistanceFrom > 0)
+      pushY = divBox.y + 10;
     else 
-      pushy = divBox.y - 10;
-    div.style.top = `${pushy}px`;
+      pushY = divBox.y - 10;
+    div.style.top = `${pushY}px`;
   }
 
-  if(divBox.x < -120) {
+  buttonHitsLeftEdge = divBox.x < leftEdge
+  if(buttonHitsLeftEdge) {
     div.style.left = "40%"
     div.style.top = "30%"
   }
 
-  if(divBox.x > window.innerWidth - 250) {
+  buttonHitsRightEdge = divBox.x > rightEdge;
+  if(buttonHitsRightEdge) {
     div.style.left = "40%"
     div.style.top = "30%"
   }
 
-  if(divBox.y < -170) {
+  buttonHitsUpperEdge = divBox.y < upperEdge;
+  if(buttonHitsUpperEdge) {
     div.style.left = "40%"
     div.style.top = "30%"
   }
 
-  if(divBox.y > window.innerHeight - 234) {
+  buttonHitsLowerEdge = divBox.y > lowerEdge
+  if(buttonHitsLowerEdge) {
     div.style.left = "400px"
     div.style.top = "400px"
   }
