@@ -17,7 +17,7 @@ document.addEventListener('mousemove', (e) => {
 
   mouseHitsVerticalTriggerpoint = Math.abs(horizontalDistanceFrom) <= horizontalOffset && Math.abs(verticalDistanceFrom) <= verticalOffset
   if (mouseHitsVerticalTriggerpoint) {
-    setButtonPosition( buttonBox.x + horizontalOffset / horizontalDistanceFrom * 10, buttonBox.y + verticalOffset / verticalDistanceFrom * 10)
+    setButtonPosition(buttonBox.x + horizontalOffset / horizontalDistanceFrom * 10, buttonBox.y + verticalOffset / verticalDistanceFrom * 10)
   }
 })
 
@@ -26,25 +26,25 @@ function setButtonPosition(left, top) {
   const buttonBox = button.getBoundingClientRect()
 
   buttonHitsLeftEdge = distanceFromCenter(left, windowBox.left, buttonBox.width) < 0
-  if(buttonHitsLeftEdge) {
+  if (buttonHitsLeftEdge) {
     left = window.innerWidth / 2
     top = window.innerHeight / 2
   }
 
   buttonHitsRightEdge = distanceFromCenter(left, windowBox.right, buttonBox.width) > 0
-  if(buttonHitsRightEdge) {
+  if (buttonHitsRightEdge) {
     left = window.innerWidth / 2
     top = window.innerHeight / 2
   }
 
   buttonHitsUpperEdge = distanceFromCenter(top, windowBox.top, buttonBox.height) < 0
-  if(ButtonHitsUpperEdge) {
+  if (buttonHitsUpperEdge) {
     left = window.innerWidth / 2
     top = window.innerHeight / 2
   }
   
   buttonHitsLowerEdge = distanceFromCenter(top, windowBox.bottom, buttonBox.height) > 0
-  if(buttonHitsLowerEdge) {
+  if (buttonHitsLowerEdge) {
     left = window.innerWidth / 2
     top = window.innerHeight / 2
   }
