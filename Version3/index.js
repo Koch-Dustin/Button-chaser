@@ -36,27 +36,14 @@ div.addEventListener('mousemove', (e) => {
   }
 
   buttonHitsLeftEdge = divBox.x < leftEdge
-  if(buttonHitsLeftEdge) {
-    div.style.left = "40%"
-    div.style.top = "30%"
-  }
-
   buttonHitsRightEdge = divBox.x > rightEdge;
-  if(buttonHitsRightEdge) {
-    div.style.left = "40%"
-    div.style.top = "30%"
-  }
-
   buttonHitsUpperEdge = divBox.y < upperEdge;
-  if(buttonHitsUpperEdge) {
+  buttonHitsLowerEdge = divBox.y > lowerEdge
+
+  buttonHitsAnyEdge = buttonHitsLeftEdge || buttonHitsRightEdge || buttonHitsUpperEdge || buttonHitsLowerEdge
+  if(buttonHitsAnyEdge) {
     div.style.left = "40%"
     div.style.top = "30%"
-  }
-
-  buttonHitsLowerEdge = divBox.y > lowerEdge
-  if(buttonHitsLowerEdge) {
-    div.style.left = "400px"
-    div.style.top = "400px"
   }
 })
 
