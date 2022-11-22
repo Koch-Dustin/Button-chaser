@@ -1,4 +1,4 @@
-let buttonToChase = document.getElementById("button");
+const buttonToChase = document.getElementById("button");
 const OFFSET = 100;
 
 const left = buttonToChase.style.left;
@@ -136,13 +136,13 @@ document.addEventListener("mousemove", (e) => {
     setButtonPosition(buttonBox.x - 100 * 5, buttonBox.y - 100 * 3);
   }
 
-  let xborder = buttonToChase.getBoundingClientRect().x;
-  let yborder = buttonToChase.getBoundingClientRect().y;
+  const buttonBorderX = buttonToChase.getBoundingClientRect().x;
+  const buttonBorderY = buttonToChase.getBoundingClientRect().y;
 
   const buttonHitsTheEndOfTheBrowserOnTheXCoordinate =
-    xborder <= 0 || xborder >= 1660;
+    buttonBorderX <= 0 || buttonBorderX >= 1660;
   const buttonHitsTheEndOfTheBrowserOnTheYCoordinate =
-    yborder <= 7 || yborder >= 900;
+    buttonBorderY <= 7 || buttonBorderY >= 900;
 
   const buttonHitsAnyEndOfTheBrowser =
     buttonHitsTheEndOfTheBrowserOnTheXCoordinate ||
